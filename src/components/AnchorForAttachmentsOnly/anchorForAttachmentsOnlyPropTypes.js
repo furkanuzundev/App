@@ -18,4 +18,6 @@ const defaultProps = {
     displayName: '',
 };
 
+console.log('here')
+
 export {propTypes, defaultProps};
