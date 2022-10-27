@@ -48,6 +48,10 @@ const propTypes = {
     /** Should the button be enabled when offline */
     enabledWhenOffline: PropTypes.bool,
 
+    /** Check input state with default values for submit button disabled */
+    // eslint-disable-next-line react/require-default-props
+    buttonDisabledComparedFields: PropTypes.objectOf(PropTypes.string),
+
     ...withLocalizePropTypes,
 };
 
@@ -232,6 +236,7 @@ console.log('test')
                             }}
                             containerStyles={[styles.mh0, styles.mt5]}
                             enabledWhenOffline={this.props.enabledWhenOffline}
+                            isDisabled={!_.isEmpty(this.props.buttonDisabledComparedFields) ? _.isMatch(this.state.inputValues, this.props.buttonDisabledComparedFields) : false}
                         />
                         )}
                     </View>

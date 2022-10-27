@@ -246,6 +246,16 @@ class ProfilePage extends Component {
                     onSubmit={this.updatePersonalDetails}
                     submitButtonText={this.props.translate('common.save')}
                     enabledWhenOffline
+                    buttonDisabledComparedFields={
+                        {
+                            firstName: lodashGet(currentUserDetails, 'firstName', null),
+                            lastName: lodashGet(currentUserDetails, 'lastName', null),
+                            timezone: lodashGet(currentUserDetails, 'timezone.selected', null),
+                            isAutomaticTimezone: lodashGet(currentUserDetails, 'timezone.automatic', null),
+                            pronouns: pronounsPickerValue,
+                            ...(this.state.hasSelfSelectedPronouns && {selfSelectedPronoun: lodashGet(currentUserDetails, 'pronouns', null)}),
+                        }
+                    }
                 >
                     <OfflineWithFeedback
                         pendingAction={lodashGet(this.props.currentUserPersonalDetails, 'pendingFields.avatar', null)}
