@@ -18,6 +18,6 @@ const defaultProps = {
     displayName: '',
 };
 
-console.log('check verified again')
+console.log('check verified')
 
 export {propTypes, defaultProps};
