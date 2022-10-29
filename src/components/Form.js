@@ -209,7 +209,7 @@ class Form extends React.Component {
             });
         });
     }
-
+console.log('test')
     render() {
         return (
             <>
